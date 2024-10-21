@@ -458,7 +458,7 @@ input[type="number"] {
 
 .side-nav-whatsapp {
     cursor: pointer;
-    background-color: #371B10;
+    background-color: #134217;
     margin-top: 15px;
     padding: 0 11px;
     border-radius: 50px 0 0 50px;
@@ -616,6 +616,142 @@ input[type="number"] {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
+#overview {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.overview-section-text {
+    width: 40vw;
+    height: 70vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-image: url('assets/overview background.png');
+    background-repeat: no-repeat;
+    background-position: 0% 31%;
+    background-size: 75%;
+}
+
+.overview-section-text h1 {
+    font-size: 40px;
+}
+
+.overview-section-text p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.bird {
+    width: 153px;
+    height: 110px;
+    position: absolute;
+    left: 30%;
+    bottom: -34%;
+    transform: rotate3d(8, 33, 0, 180deg);
+}
+
+.main_div {
+    width: fit-content;
+    --color: #00ad09;
+    position: relative;
+    z-index: 1;
+}
+
+.main_div::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    top: -7px;
+    left: -7px;
+    z-index: -5;
+    border-top: 3px solid var(--color);
+    border-left: 3px solid var(--color);
+    transition: 0.5s;
+}
+
+.main_div::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    bottom: -7px;
+    right: -7px;
+    z-index: -5;
+    border-right: 3px solid var(--color);
+    border-bottom: 3px solid var(--color);
+    transition: 0.5s;
+}
+
+.main_div:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+.main_div:hover::after {
+    width: 100%;
+    height: 100%;
+}
+
+.main_div button {
+    padding: 0.7em 1.5em;
+    font-size: 20px;
+    background: #134217;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.main_div button:hover {
+    background: #222222;
+}
+
+.overview-section-image {
+    height: 80vh;
+    width: 40vw;
+    background-image: url("assets/Dream-Gurukul-landing-page-portrait-1.webp");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+#why-bungalow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.project-about-icons {
+    margin-top: 20px;
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.project-about-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+.project-about-icons p {
+    font-size: 20px;
+}
+
 
 .video_container {
     margin-top: 50px;
@@ -624,12 +760,9 @@ input[type="number"] {
 }
 
 .video {
-    width: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 5%;
-    margin-right: 5%;
 }
 
 .video iframe {
@@ -639,15 +772,15 @@ input[type="number"] {
 }
 
 #map.map-section {
-    padding: 60px 20px;
+    padding: 30px 0px;
     /* Light gray background for contrast */
     text-align: center;
     /* Center align heading */
 }
 
 #map.map-section .map {
-    width: 90%;
-    height: 60vh;
+    width: 98%;
+    height: 70vh;
     margin: 10px auto;
     /* Center the map */
     border: 1px solid black;
@@ -662,6 +795,105 @@ input[type="number"] {
     border: none;
 }
 
+footer {
+    bottom: 0;
+    background-color: #371B10;
+    color: #efe1bb;
+    text-align: center;
+    padding: 30px 0 30px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer div {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: row;
+    width: 95%;
+    padding: 0 0 50px 0;
+    position: relative;
+    /* Ensure the pseudo-element is positioned relative to this element */
+}
+
+footer div::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* border-bottom: 1px solid white; */
+}
+
+footer div p {
+    color: #efe1bb;
+    font-size: 18px;
+}
+
+footer h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 23px;
+    font-weight: 400;
+    margin: 20px 0 5px;
+}
+
+footer p {
+    font-family: "Jost", sans-serif;
+    font-size: 15px;
+    color: white;
+}
+
+footer a {
+    text-decoration: none;
+    color: #efe1bb;
+}
+
+.developer-office {
+    text-align: left;
+}
+
+.developer-office img {
+    position: relative;
+    left: -16px;
+    width: 220px;
+    border-radius: 3px;
+    /* padding: 5px; */
+    /* background-color: rgba(255, 255, 255, 0.9); */
+}
+
+.site-address {
+    text-align: left;
+}
+
+@keyframes fadeInMoveUp {
+    from {
+        opacity: 0;
+        transform: translateY(120px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(120px);
+}
+
+.visible {
+    opacity: 1;
+    animation: fadeInMoveUp 2.5s forwards;
+}
+
+.developer-office,
+.site-address {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 2.5s, transform 2.5s;
+}
 
 @media only screen and (max-width: 768px) {
 
@@ -866,8 +1098,8 @@ input[type="number"] {
         bottom: 0;
         width: 92vw;
         backdrop-filter: blur(10px);
-        border-top: 3px solid white;
-        background-color: #371B10;
+        border-top: 1px solid white;
+        background-color: #134217;
         color: white;
         z-index: 100;
         opacity: 1;
@@ -1028,23 +1260,118 @@ input[type="number"] {
         height: 88vh;
     }
 
-    .main_div {
-        width: 90%;
-        height: 223px;
-        box-shadow: 0px 0px 1px grey;
-        margin: auto;
-        margin-top: 30px;
-        /* border: 1px solid red; */
-        position: relative;
-        overflow: hidden;
-        border-radius: 10px;
+    #overview {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .overview-section-image,
+    .overview-section-text {
+        width: 100%;
+    }
+
+    .overview-section-text {
+        height: 60vh;
+    }
+
+    .bird {
+        width: 155px;
+        height: 111px;
+        left: auto;
+        right: 8%;
+        bottom: -15%;
+    }
+
+
+    .project-about-icons {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .project-about-icon {
+        margin: 0 0 0 0;
+        width: 50%;
+        text-align: center;
+        justify-content: flex-start;
+        height: 20vh;
+    }
+
+    .project-about-icons p {
+        font-size: 17px;
+    }
+
+    .icon {
+        width: 80px;
+        height: 80px;
+    }
+
+    .custom-icon {
+        width: 90px;
+        height: 90px;
+    }
+
+    .project-about-icon p {
+        text-align: center;
+    }
+
+    .project-about h2 {
+        font-size: 21px;
+    }
+
+
+    #map.map-section .map {
+        height: 50vh;
+    }
+
+    .video iframe {
+        width: 100vw;
+        height: 26vh;
+        border-radius: 0;
     }
 
     .video_container {
         margin-top: 20px;
     }
 
+
+    footer {
+        padding-bottom: 8vh;
+    }
+
+    footer div {
+        /* display: flex; */
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 0 0 30px 0;
+    }
+
+    footer section {
+        width: 90%;
+        margin-bottom: 5%;
+    }
+
+    .developer-office {
+        text-align: center;
+    }
+
+    .site-address {
+        text-align: center;
+    }
+
+    .developer-office img {
+        width: 250px;
+        left: 0;
+    }
+
 }
+
+@media only screen and (max-width: 420px) {
+    .overview-section-text {
+        height: 65vh;
+    }
+}
+
 
 @media only screen and (max-width: 380px) {
     nav ul li a img {
@@ -1110,6 +1437,18 @@ input[type="number"] {
         height: 100vh;
     }
 
+    .overview-section-text {
+        height: 77vh;
+    }
+
+    .bird {
+        width: 125px;
+        height: 100px;
+        position: absolute;
+        right: 8%;
+        bottom: -21%;
+    }
+
 
     .video iframe {
         width: 99vw;
@@ -1118,5 +1457,9 @@ input[type="number"] {
 
     .contact #map {
         margin-top: 65%;
+    }
+
+    footer {
+        padding-bottom: 10vh;
     }
 }

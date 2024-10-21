@@ -114,7 +114,6 @@ document.addEventListener("DOMContentLoaded", () => {
 /*========================================================================================================================== */
 // ===================================== Add shadow in nav ================================
 const nav = document.querySelector('nav');
-const side_icon = document.getElementById('side_icon');
 const nav_items = document.querySelectorAll('.nav-items li a');
 function addShadowOnScroll() {
     let scrollPosition = window.scrollY;
@@ -123,7 +122,6 @@ function addShadowOnScroll() {
         nav.style.backdropFilter = 'blur(15px)';
         nav.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
         nav.classList.add('scrolled');
-        side_icon.style.display = 'flex'
         nav_items.forEach(items => {
             items.style.color = '#986048'
         })
@@ -132,7 +130,6 @@ function addShadowOnScroll() {
         nav.style.backdropFilter = 'none';
         nav.style.backgroundColor = 'transparent';
         nav.classList.remove('scrolled');
-        side_icon.style.display = 'none'
         nav_items.forEach(items => {
             items.style.color = 'white'
         })
@@ -467,5 +464,51 @@ window.addEventListener('scroll', function () {
 //     // window.location.assign(`https://thejaingroup.co.in/dream_world_city/form_submit.php?name=${encodeURIComponent(name)}&phone=${encodeURIComponent(phone)}&email=${encodeURIComponent(email)}&enquiryType=${encodeURIComponent(enquiryType)}&utm_form_nam=${encodeURIComponent(utmFormNameValue)}`);
 // }
 
+// ============================ project video ===============================
+
+document.getElementById('video-thumbnail').addEventListener('click', function () {
+    var iframe = document.getElementById('video-iframe');
+    var src = iframe.src;
+    iframe.src = src + (src.includes('?') ? '&' : '?') + 'autoplay=1';
+
+    document.getElementById('video-thumbnail').style.display = 'none';
+    document.getElementById('video-wrapper').style.display = 'block';
+});
+
+// ============================================= footer =========================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    const footerSection = document.querySelector('footer');
+    const elements = footerSection.querySelectorAll('.developer-office, .site-address');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+    console.log("footer===============================")
+
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                console.log("footer===============================")
+                elements.forEach((element, index) => {
+                    setTimeout(() => {
+                        element.classList.add('visible');
+                        element.classList.remove('hidden');
+                    }, index * 600); // Stagger the animations with 300ms delay
+                });
+                observer.unobserve(footerSection); // Stop observing after the first trigger
+            }
+        });
+    }, observerOptions);
+
+    elements.forEach(element => {
+        element.classList.add('hidden');
+    });
+
+    observer.observe(footerSection);
+});
 
 
