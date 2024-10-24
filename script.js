@@ -464,7 +464,6 @@ window.addEventListener('scroll', function () {
 //     // window.location.assign(`https://thejaingroup.co.in/dream_world_city/form_submit.php?name=${encodeURIComponent(name)}&phone=${encodeURIComponent(phone)}&email=${encodeURIComponent(email)}&enquiryType=${encodeURIComponent(enquiryType)}&utm_form_nam=${encodeURIComponent(utmFormNameValue)}`);
 // }
 
-
 // ================================================ amenities ==============================
 let currentSlide = 0;
 let slideInterval;
@@ -551,7 +550,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     observer.observe(amenitiesSection);
 });
-
 
 
 
@@ -719,13 +717,131 @@ function closeModal() {
 // Add click event listeners to all floor plan images
 
 // ======================================== Floor Plan and Gallery image zoom ===================================
-document.querySelectorAll('.floor-plans-item img, .master-floor-plans-item img, .gallery-images .img-container img').forEach(function (img) {
-    img.addEventListener('click', function () {
-        console.log(this.src); // Log the src of the clicked image
-        openModal(this.src);
-    });
+let gallerySlideInterval;  // renamed from slideInterval to avoid conflict
+const slideTiming = 3000;
+
+function startGallerySlideInterval() {
+    gallerySlideInterval = setInterval(() => nextBtn.click(), slideTiming);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const carousel = document.querySelector('.carousel');
+    const slider = carousel.querySelector('.carousel_track');
+    let slides = [...slider.children];
+
+    // Initial slides position, so user can go from first to last slide
+    slider.prepend(slides[slides.length - 1]);
+
+    // Auto sliding
+    carousel.addEventListener('mouseover', () => clearInterval(gallerySlideInterval));
+    carousel.addEventListener('mouseleave', startGallerySlideInterval);
+    startGallerySlideInterval();
 });
 
+
+/*============================== gallery scroll ============================================== */
+
+const gallery_carousel = document.querySelector('.gallery-carousel')
+const slider = gallery_carousel.querySelectorAll('.gallery-carousel_slides')
+console.log('====================================');
+console.log(slider);
+console.log('====================================');
+let slides = [...slider.children]
+
+// Initial slides position, so user can go from first to last slide (click to the left first)
+slider.prepend(slides[slides.length - 1])
+
+// Creating dot for each slide
+const createDots = (gallery_carousel, initSlides) => {
+    const dotsContainer = document.createElement('div')
+    dotsContainer.classList.add('gallery-carousel_nav')
+
+    initSlides.forEach((slide, index) => {
+        const dot = document.createElement('button')
+        dot.type = 'button'
+        dot.classList.add('gallery-carousel_dot')
+        dot.setAttribute('aria-label', `Slide number ${index + 1}`)
+        slide.dataset.position = index
+        slide.classList.contains('is-selected') && dot.classList.add('is-selected')
+        dotsContainer.appendChild(dot)
+    })
+
+    gallery_carousel.appendChild(dotsContainer)
+
+    return dotsContainer
+}
+
+// Updating relevant dot
+const updateDot = slide => {
+    const currDot = dotNav.querySelector('.is-selected')
+    const targetDot = slide.dataset.position
+
+    currDot.classList.remove('is-selected')
+    dots[targetDot].classList.add('is-selected')
+}
+
+// Handling arrow buttons
+const handleArrowClick = arrow => {
+    arrow.addEventListener('click', () => {
+        slides = [...slider.children]
+        const currSlide = slider.querySelector('.is-selected')
+        currSlide.classList.remove('is-selected')
+        let targetSlide
+
+        if (arrow.classList.contains('jsPrev')) {
+            targetSlide = currSlide.previousElementSibling
+            slider.prepend(slides[slides.length - 1])
+        }
+
+        if (arrow.classList.contains('jsNext')) {
+            targetSlide = currSlide.nextElementSibling
+            slider.append(slides[0])
+        }
+
+        targetSlide.classList.add('is-selected')
+        updateDot(targetSlide)
+    })
+}
+
+const buttons = gallery_carousel.querySelectorAll('.gallery_carousel_btn')
+buttons.forEach(handleArrowClick)
+
+// Handling dot buttons
+const handleDotClick = dot => {
+    const dotIndex = dots.indexOf(dot)
+    const currSlidePos = slider.querySelector('.is-selected').dataset.position
+    const targetSlidePos = slider.querySelector(`[data-position='${dotIndex}']`).dataset.position
+
+    if (currSlidePos < targetSlidePos) {
+        const count = targetSlidePos - currSlidePos
+        for (let i = count; i > 0; i--) nextBtn.click()
+    }
+
+    if (currSlidePos > targetSlidePos) {
+        const count = currSlidePos - targetSlidePos
+        for (let i = count; i > 0; i--) prevBtn.click()
+    }
+}
+
+const dotNav = createDots(gallery_carousel, slides)
+const dots = [...dotNav.children]
+const prevBtn = buttons[0]
+const nextBtn = buttons[1]
+
+dotNav.addEventListener('click', e => {
+    const dot = e.target.closest('button')
+    if (!dot) return
+    handleDotClick(dot)
+})
+
+// Auto sliding
+const slide_Timing = 3000
+let interval
+const slide_Interval = () => interval = setInterval(() => nextBtn.click(), slideTiming)
+
+gallery_carousel.addEventListener('mouseover', () => clearInterval(interval))
+gallery_carousel.addEventListener('mouseleave', slide_Interval)
+slide_Interval()
 
 
 // ============================ project video ===============================
