@@ -464,6 +464,270 @@ window.addEventListener('scroll', function () {
 //     // window.location.assign(`https://thejaingroup.co.in/dream_world_city/form_submit.php?name=${encodeURIComponent(name)}&phone=${encodeURIComponent(phone)}&email=${encodeURIComponent(email)}&enquiryType=${encodeURIComponent(enquiryType)}&utm_form_nam=${encodeURIComponent(utmFormNameValue)}`);
 // }
 
+
+// ================================================ amenities ==============================
+let currentSlide = 0;
+let slideInterval;
+const slideIntervalTime = 3000;
+
+function showSlide(index) {
+    const slides = document.querySelectorAll('.carousel-item');
+    const totalSlides = slides.length;
+    const amenitiesListItems = document.querySelectorAll('.amenities-list li');
+
+    if (index >= totalSlides) {
+        currentSlide = 0;
+    } else if (index < 0) {
+        currentSlide = totalSlides - 1;
+    } else {
+        currentSlide = index;
+    }
+
+    const offset = -currentSlide * 100;
+    document.querySelector('.carousel-container').style.transform = `translateX(${offset}%)`;
+
+    amenitiesListItems.forEach((item, idx) => {
+        if (idx === currentSlide) {
+            item.classList.add('active');
+        } else {
+            item.classList.remove('active');
+        }
+    });
+}
+
+function nextSlide() {
+    resetInterval();
+    showSlide(currentSlide + 1);
+}
+
+function prevSlide() {
+    resetInterval();
+    showSlide(currentSlide - 1);
+}
+
+function resetInterval() {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(nextSlide, slideIntervalTime);
+}
+
+function startSlider() {
+    showSlide(currentSlide); // Initial call to display the first slide
+    slideInterval = setInterval(nextSlide, slideIntervalTime);
+}
+
+function stopSlider() {
+    clearInterval(slideInterval);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const amenitiesListItems = document.querySelectorAll('.amenities-list li');
+    if (amenitiesListItems.length > 0) {
+        amenitiesListItems[0].classList.add('active');
+    }
+    amenitiesListItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            resetInterval();
+            showSlide(index);
+        });
+    });
+
+    const amenitiesSection = document.querySelector('.amenities');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                startSlider();
+            } else {
+                stopSlider();
+            }
+        });
+    }, observerOptions);
+
+    observer.observe(amenitiesSection);
+});
+
+
+
+
+// ================================== floor plan ===============================================
+
+let current = 0;
+let floorPlanInterval;
+//   const slideIntervalTime = 3000;
+
+function floorPlansShowSlide(index) {
+    const slides = document.querySelectorAll('.floor-plans-item');
+    const totalSlides = slides.length;
+    if (index >= totalSlides) {
+        current = 0;
+    } else if (index < 0) {
+        current = totalSlides - 1;
+    } else {
+        current = index;
+    }
+    const offset = -current * 100;
+    document.querySelector('.floor-plans-container').style.transform = `translateX(${offset}%)`;
+}
+
+function floorPlansnextSlide() {
+    resetFloorPlanInterval();
+    floorPlansShowSlide(current + 1);
+}
+
+function floorPlansprevSlide() {
+    resetFloorPlanInterval();
+    floorPlansShowSlide(current - 1);
+}
+
+function resetFloorPlanInterval() {
+    clearInterval(floorPlanInterval);
+    floorPlanInterval = setInterval(floorPlansnextSlide, 5000);
+}
+
+function startFloorPlanSlider() {
+    floorPlansShowSlide(current); // Initial call to display the first slide
+    floorPlanInterval = setInterval(floorPlansnextSlide, 5000);
+}
+
+function stopFloorPlanSlider() {
+    clearInterval(floorPlanInterval);
+}
+
+// Master Plan
+// let masterPlanCurrent = 0;
+// let masterPlanInterval;
+
+// function masterfloorPlansShowSlide(masterPlanIndex) {
+//     const masterSlides = document.querySelectorAll('.master-floor-plans-item');
+//     const mastertotalSlides = masterSlides.length;
+//     if (masterPlanIndex >= mastertotalSlides) {
+//         masterPlanCurrent = 0;
+//     } else if (masterPlanIndex < 0) {
+//         masterPlanCurrent = mastertotalSlides - 1;
+//     } else {
+//         masterPlanCurrent = masterPlanIndex;
+//     }
+//     const masterPlanOffset = -masterPlanCurrent * 100;
+//     document.querySelector('.master-floor-plans-container').style.transform = `translateX(${masterPlanOffset}%)`;
+// }
+
+// function masterFloorPlansNextSlide() {
+//     resetMasterPlanInterval();
+//     masterfloorPlansShowSlide(masterPlanCurrent + 1);
+// }
+
+// function masterFloorPlansprevSlide() {
+//     resetMasterPlanInterval();
+//     masterfloorPlansShowSlide(masterPlanCurrent - 1);
+// }
+
+// function resetMasterPlanInterval() {
+//     clearInterval(masterPlanInterval);
+//     masterPlanInterval = setInterval(masterFloorPlansNextSlide, slideIntervalTime);
+// }
+
+// function startMasterPlanSlider() {
+//     masterfloorPlansShowSlide(masterPlanCurrent); // Initial call to display the first slide
+//     masterPlanInterval = setInterval(masterFloorPlansNextSlide, slideIntervalTime);
+// }
+
+// function stopMasterPlanSlider() {
+//     clearInterval(masterPlanInterval);
+// }
+
+// Intersection Observer
+document.addEventListener('DOMContentLoaded', () => {
+    const floorPlansSection = document.querySelector('.floor-plans-section');
+    const masterPlanSection = document.querySelector('.floor-plans-tab-content');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                startFloorPlanSlider();
+            } else {
+                stopFloorPlanSlider();
+            }
+        });
+    }, observerOptions);
+
+    const masterObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                startMasterPlanSlider();
+            } else {
+                stopMasterPlanSlider();
+            }
+        });
+    }, observerOptions);
+
+    observer.observe(floorPlansSection);
+    masterObserver.observe(masterPlanSection);
+});
+
+// Floor Plan Tabs
+const floorPlansTabs = document.getElementsByClassName('floor-plans-tab');
+const floorPlansTabContents = document.getElementsByClassName('floor-plans-tab-content');
+
+function floorPlanShowTab(tabIndex) {
+    for (let content of floorPlansTabContents) {
+        content.classList.remove('active');
+        content.classList.add('hidden');
+    }
+
+    setTimeout(() => {
+        floorPlansTabContents[tabIndex - 1].classList.remove('hidden');
+        floorPlansTabContents[tabIndex - 1].classList.add('active');
+    }, 300);
+    for (let tab of floorPlansTabs) {
+        tab.classList.remove('focus');
+    }
+    floorPlansTabs[tabIndex - 1].classList.add('focus');
+}
+
+floorPlansTabs[0].classList.add('focus');
+floorPlanShowTab(1);
+
+// Get the modal
+var floorPlanModal = document.getElementById("imageModal");
+
+// Get the modal image
+var modalImg = document.getElementById("modalImage");
+
+// Function to open the modal and display the image
+function openModal(src) {
+    floorPlanModal.style.display = "block";
+    modalImg.src = src;
+}
+
+// Function to close the modal
+function closeModal() {
+    floorPlanModal.style.display = "none";
+}
+
+// Add click event listeners to all floor plan images
+
+// ======================================== Floor Plan and Gallery image zoom ===================================
+document.querySelectorAll('.floor-plans-item img, .master-floor-plans-item img, .gallery-images .img-container img').forEach(function (img) {
+    img.addEventListener('click', function () {
+        console.log(this.src); // Log the src of the clicked image
+        openModal(this.src);
+    });
+});
+
+
+
 // ============================ project video ===============================
 
 document.getElementById('video-thumbnail').addEventListener('click', function () {
@@ -510,5 +774,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
     observer.observe(footerSection);
 });
-
-

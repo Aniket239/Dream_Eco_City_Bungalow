@@ -521,9 +521,10 @@ input[type="number"] {
 
 .heading {
     font-family: "Cinzel", serif;
-    font-size: 32px;
+    font-size: 30px;
     font-weight: bolder;
     color: #31403F;
+    text-align: center;
 }
 
 /* Home section styling */
@@ -546,10 +547,10 @@ input[type="number"] {
 /* Image styling */
 .banner_image {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     width: 100%;
-    height: 125vh;
+    height: 100vh;
     object-fit: fill;
     transform: translate(-50%, -50%);
     z-index: 1;
@@ -716,18 +717,20 @@ input[type="number"] {
 .overview-section-image {
     height: 80vh;
     width: 40vw;
-    background-image: url("assets/Dream-Gurukul-landing-page-portrait-1.webp");
+    background-image: url("assets/banner\ portrait.webp");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
 }
 
 #why-bungalow {
+    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 20px;
+    padding: 20px;
 }
 
 .project-about-icons {
@@ -752,6 +755,507 @@ input[type="number"] {
     font-size: 20px;
 }
 
+
+.amenities {
+    text-align: center;
+    /* padding: 20px; */
+}
+
+.amenities h1 {
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    font-size: 38px;
+    color: #000000;
+    margin-bottom: 10px;
+    text-align: left;
+    padding: 20px 0 0 5%;
+}
+
+.amenities h1::after {
+    content: "";
+    display: inline-block;
+    margin-left: 10px;
+    /* Adjust this value to control the space between the text and the line */
+    height: 3px;
+    /* Adjust this value to change the thickness of the line */
+    width: 50%;
+    /* Adjust this value to change the length of the line */
+    background-color: black;
+    /* Adjust this value to change the color of the line */
+    vertical-align: middle;
+}
+
+.amenities-description {
+    /* width: 26.5%; */
+    font-family: "Jost", sans-serif;
+    padding: 0 3.5%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.amenities-description-mobile {
+    display: none;
+}
+
+.amenities-description p {
+    padding: 0 2.5% 30px 1.5%;
+    font-size: 20px;
+    text-align: left;
+}
+
+.amenities .download-brochure {
+    margin: 30px auto 0 auto;
+    font-family: "Jost", sans-serif;
+}
+
+.amenities-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 92%;
+    margin: auto;
+}
+
+.amenities-list {
+    width: 28%;
+    margin-right: 20px;
+    text-align: left;
+}
+
+.amenities-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.amenities-list li {
+    cursor: pointer;
+    font-family: "Jost", sans-serif;
+    font-size: 18px;
+    padding: 10px 0;
+    color: #000000;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.amenities-list span {
+    margin-right: 10px;
+}
+
+.amenities-list li.active {
+    background-color: #134217;
+    color: white;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease;
+    font-family: "Jost", sans-serif;
+}
+
+.carousel {
+    position: relative;
+    width: 60%;
+    overflow: hidden;
+    margin: auto 30px auto 0;
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.amenities-name {
+    display: none;
+}
+
+.amenities-desktop-image {
+    display: block;
+}
+
+.amenities-mobile-image {
+    display: none;
+}
+
+.carousel-item img {
+    width: 90%;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #134217;
+    color: white;
+    border: 3px solid white;
+    /* padding: 20px; */
+    height: 65px;
+    width: 65px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: larger;
+    font-weight: bold;
+    z-index: 10;
+    transition: all 0.1s ease-in-out;
+}
+
+.carousel-control:hover {
+    background-color: #0f3112;
+}
+
+.carousel-control.prev {
+    left: 0px;
+}
+
+.carousel-control.next {
+    right: 0px;
+}
+
+.amenities-download-brochure {
+    margin: auto;
+}
+
+.floor-plans-section {
+    text-align: right;
+    position: relative;
+    width: 80%;
+    margin: 0 auto 30px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    min-height: 89vh;
+}
+
+.floor-plans {
+    text-align: right;
+    position: relative;
+    width: 70%;
+    margin: 0 auto 30px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.master-floor-plans {
+    text-align: right;
+    position: relative;
+    width: 90%;
+    margin: 0 auto 30px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.floor-plans-section h1 {
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    /* font-family: "Roboto", sans-serif; */
+    font-size: 38px;
+    color: #31403F;
+    margin-top: 60px;
+}
+
+.floor-plans-heading-desktop {
+    margin-top: 60px;
+    padding: 0 0 0 8%;
+}
+
+.floor-plans-heading-desktop::after {
+    content: "";
+    display: inline-block;
+    margin-left: 10px;
+    height: 3px;
+    width: 60%;
+    background-color: #31403F;
+    vertical-align: middle;
+}
+
+.floor-plans-heading-desktop {
+    display: block;
+}
+
+.floor-plans-heading-mobile {
+    display: none;
+}
+
+.floor-plans-tabs {
+    margin: auto 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.floor-plans-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.floor-plans-tab {
+    cursor: pointer;
+    padding: 19px 54px;
+    border: none;
+    background-color: #cecccc;
+    font-family: "Jost", sans-serif;
+    width: 100%;
+    text-align: center;
+    transition: all 0.3s;
+    font-size: 20px;
+    font-weight: 500;
+    display: inline-block;
+    margin: 10px 3px;
+}
+
+.floor-plans-tab:focus,
+.floor-plans-tab.focus {
+    background-color: #7E4B2C;
+    color: white;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.floor-plans-tab-content {
+    opacity: 0;
+    display: none;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.floor-plans-tab-content.active {
+    display: block;
+    width: 55vw;
+    opacity: 1;
+    animation: fadeIn 0.5s;
+}
+
+.floor-plans-tab-content.hidden {
+    opacity: 0;
+    display: none;
+    animation: fadeOut 0.5s;
+}
+
+.floor-plans-images {
+    min-width: 69%;
+}
+
+.floor-plans-container,
+.master-floor-plans-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.floor-plans-item,
+.master-floor-plans-item {
+    position: relative;
+    /* Add this line */
+    min-width: 100%;
+    box-sizing: border-box;
+    border: 2px solid black;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.unit-plan-size {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #7E4B2C;
+    color: white;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    outline: none;
+    transition: background-color 0.3s ease;
+    z-index: 5;
+    font-family: "Jost", sans-serif;
+}
+
+.floor-plans-view-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #371B10;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    outline: none;
+    transition: background-color 0.3s ease;
+    z-index: 5;
+    font-family: "Jost", sans-serif;
+}
+
+.floor-plans-view-button:hover {
+    background-color: #7E4B2C;
+}
+
+.floor-plans-item img,
+.master-floor-plans-item img {
+    width: 90%;
+    /* filter: blur(5px); */
+}
+
+.floor-plans-control {
+    position: absolute;
+    top: 52%;
+    transform: translateY(-50%);
+    background-color: #7E4B2C;
+    color: white;
+    border: 3px solid white;
+    height: 65px;
+    width: 65px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: larger;
+    font-weight: bold;
+    z-index: 20;
+}
+
+.floor-plans-control.prev {
+    left: -2px;
+}
+
+.floor-plans-control.next {
+    right: -2px;
+}
+
+.thumbnail-strip {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.thumbnail-strip img {
+    width: 70px;
+    height: auto;
+    margin: 0 10px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.thumbnail-strip img:hover {
+    border-color: #7E4B2C;
+}
+
+
+/* The Modal (background) */
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    margin-top: 68px;
+    padding-top: 20px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Modal Content (image) */
+.image-modal-content {
+    margin: 65px auto 0 auto;
+    display: block;
+    width: 90%;
+}
+
+/* Caption of Modal Image (Image Text) */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.image-modal-content {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+/* The Close Button */
+.image-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.image-modal-close:hover,
+.image-modal-close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
 
 .video_container {
     margin-top: 50px;
@@ -890,7 +1394,7 @@ footer a {
 
 .developer-office,
 .site-address {
-    opacity: 0;
+    opacity: 1;
     transform: translateY(20px);
     transition: opacity 2.5s, transform 2.5s;
 }
@@ -1248,11 +1752,11 @@ footer a {
     }
 
     .banner_image {
-        object-fit: cover;
-        width: 120%;
+        object-fit: fill;
+        width: 100%;
         transform: none;
         top: 0;
-        left: -11%;
+        left: 0;
         height: 100vh;
     }
 
@@ -1316,6 +1820,174 @@ footer a {
 
     .project-about h2 {
         font-size: 21px;
+    }
+
+
+    .amenities {
+        padding: 0 20px;
+    }
+
+    .amenities h1 {
+        padding: 20px 0 0 8%;
+    }
+
+    .amenities-container {
+        flex-direction: column;
+    }
+
+    .amenities-description {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    .amenities-description p {
+        font-size: 17px;
+    }
+
+    .amenities-description .download-brochure {
+        margin: auto;
+    }
+
+    .amenities-description-desktop {
+        display: none;
+    }
+
+    .amenities-description-mobile {
+        display: none;
+    }
+
+    .amenities-desktop-image {
+        display: none;
+    }
+
+    .amenities-mobile-image {
+        display: block;
+    }
+
+    .amenities-list {
+        display: none;
+    }
+
+    .amenities-name {
+        display: block;
+        font-family: "Jost", sans-serif;
+        font-size: 22px;
+        padding: 5px 15px;
+        background-color: #134217;
+        color: white;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        position: relative;
+        bottom: 23px;
+    }
+
+    .amenities-name span {
+        margin: 0 10px 0 0;
+    }
+
+    .carousel {
+        width: 100%;
+    }
+
+    .carousel-control.prev {
+        display: block;
+    }
+
+    .carousel-control.next {
+        display: block;
+    }
+
+    .floor-plans-section {
+        text-align: center;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 83vh;
+    }
+
+    .floor-plans {
+        text-align: center;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .floor-plans-section h1 {
+        margin-right: 0;
+    }
+
+    .floor-plans-section h1::before {
+        display: none;
+    }
+
+    .floor-plans-heading-desktop {
+        display: none;
+    }
+
+    .floor-plans-heading-mobile {
+        display: block;
+    }
+
+    .floor-plans-tabs {
+        margin: 20px auto 0 auto;
+        flex-direction: row;
+    }
+
+    .floor-plans-tab {
+        width: auto;
+        padding: 8px 20px;
+    }
+
+    .floor-plans-tab-content.active {
+        width: 90vw;
+    }
+
+    .floor-plans-control {
+        top: 53%;
+    }
+
+    .floor-plans-item img,
+    .master-floor-plans-item img {
+        width: 100%;
+    }
+
+    .master-floor-plans {
+        text-align: center;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #master-plan-control {
+        display: none;
+    }
+
+    #master-plan-strip {
+        display: none;
+    }
+
+    .master-floor-plans-container {
+        flex-direction: column;
+    }
+
+    .unit-plan-size {
+        padding: 2px 10px;
+        width: 50vw;
+    }
+
+    .thumbnail-strip img {
+        width: 50px;
+    }
+
+    .image-modal-content {
+        width: 98%;
+    }
+
+    .image-modal-close {
+        right: 15px;
     }
 
 
@@ -1448,6 +2120,20 @@ footer a {
         right: 8%;
         bottom: -21%;
     }
+
+    .amenities-name {
+        font-size: 18px;
+    }
+
+    .floor-plans-tab {
+        font-size: 16px;
+    }
+
+    .floor-plans-control {
+        height: 55px;
+        width: 55px;
+    }
+
 
 
     .video iframe {

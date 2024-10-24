@@ -187,20 +187,18 @@
         </div>
     </section>
 
-
-
     <section id="home">
         <div class="video_wrapper">
             <!-- Fallback Images -->
             <picture>
-                <img src="assets/portrait.webp" alt="Banner Image" class="banner_image portrait_banner">
-                <img src="assets/landscape.webp" alt="Banner Image" class="banner_image landscape_banner">
+                <img src="assets/banner portrait.webp" alt="Banner Image" class="banner_image portrait_banner">
+                <img src="assets/banner landscape.webp" alt="Banner Image" class="banner_image landscape_banner">
             </picture>
 
             <!-- Video Element -->
             <video id="bannerVideo" muted loop class="banner_video" data-autoplay playsinline>
-                <source data-src="assets/Banner Video Portrait.mp4" type="video/mp4" media="(max-width: 768px)">
-                <source data-src="assets/Banner Video Landscape.mp4" type="video/mp4" media="(min-width: 769px)">
+                <!-- <source data-src="assets/Banner Video Portrait.mp4" type="video/mp4" media="(max-width: 768px)">
+                <source data-src="assets/Banner Video Landscape.mp4" type="video/mp4" media="(min-width: 769px)"> -->
                 Your browser does not support the video tag.
             </video>
 
@@ -216,8 +214,8 @@
     <section id="overview">
         <div class="overview-section-text">
             <div>
-                <h1>HOME IS</h1>
-                <h1>WHERE THE GREEN IS</h1>
+                <h1 class="heading" >HOME IS</h1>
+                <h1 class="heading">WHERE THE GREEN IS</h1>
             </div>
             <img src="assets/bird.png" alt="" class="bird">
             <div>
@@ -234,7 +232,7 @@
     </section>
 
     <section id="why-bungalow">
-        <h1>Why Eco-City Bungalow?</h1>
+        <h1 class="heading">Why Dream Eco-City Bungalow?</h1>
         <div class="project-about-icons">
             <div class="project-about-icon">
                 <!-- <img loading="lazy" width="100" height="100" src="https://img.icons8.com/ios-filled/100/city-buildings.png"
@@ -268,7 +266,358 @@
                 <p class="project-icon-text">3 BHK 76 Lakhs*</p>
             </div>
         </div>
+        <div class="main_div">
+            <button>Enquire Now</button>
+        </div>
     </section>
+    <br>
+    <h1 class="heading">Amenities</h1>
+    <br>
+    <div class="amenities-container">
+        <div class="amenities-list">
+            <ul id="amenities-list">
+                <li onclick="showSlide(1)"><span class="material-symbols-outlined">
+                        sports_cricket
+                    </span>Children Park</li>
+                <li onclick="showSlide(2)"><span class="material-symbols-outlined">
+                        elderly
+                    </span>Senior Citizen Corner</li>
+                <li onclick="showSlide(3)"><span class="material-symbols-outlined">
+                        directions_run
+                    </span>Jogging & Cycling Track</li>
+                <li onclick="showSlide(4)"><span class="material-symbols-outlined">
+                        self_improvement
+                    </span>Club Ujjivan</li>
+                <li onclick="showSlide(5)"><span class="material-symbols-outlined">
+                        auto_stories
+                    </span>Library</li>
+                <li onclick="showSlide(6)"><span class="material-symbols-outlined">
+                        pool
+                    </span>Swimming Pool</li>
+                <li onclick="showSlide(7)"><span class="material-symbols-outlined">
+                        exercise
+                    </span>Air Conditioned Gymnasium</li>
+                <li onclick="showSlide(8)"><span class="material-symbols-outlined">
+                        sports_tennis
+                    </span>Indoor Games Room</li>
+                <li onclick="showSlide(9)"><span class="material-symbols-outlined">
+                        deceased
+                    </span>Rooftop Garden</li>
+                <li onclick="showSlide(10)"><span class="material-symbols-outlined">
+                        movie
+                    </span>Mini Theatre</li>
+                <li onclick="showSlide(11)"><span class="material-symbols-outlined">
+                        chair
+                    </span>Banquet</li>
+                <li onclick="showSlide(12)"><span class="material-symbols-outlined">
+                        music_note
+                    </span>Malhar</li>
+                <li onclick="showSlide(13)"><span class="material-symbols-outlined">
+                    sports_gymnastics
+                    </span>Muktadhara</li>
+                <li onclick="showSlide(14)"><span class="material-symbols-outlined">
+                        palette
+                    </span>Chitrakalpa</li>
+                <li onclick="showSlide(15)"><span class="material-symbols-outlined">
+                        sports_soccer
+                    </span>Krirangan</li>
+            </ul>
+        </div>
+        <div class="carousel">
+            <div class="carousel-container">
+                <div class="carousel-item">
+                    <img loading="lazy" class="amenities-desktop-image"
+                        src="assets/amenities/amenities desktop/children park.webp"
+                        alt="Children Park">
+                    <img loading="lazy" class="amenities-mobile-image"
+                        src="assets/amenities/amenities mobile/children park.webp"
+                        alt="Children Park">
+                    <p class="amenities-name"><span class="material-symbols-outlined">
+                            sports_cricket
+                        </span>Children Park</p>
+                </div>
+                <div class="carousel-item">
+                    <img loading="lazy" class="amenities-desktop-image"
+                        src="assets/amenities/amenities desktop/senior citizen corner.webp"
+                        alt="Senior Citizen Corner">
+                    <img loading="lazy" class="amenities-mobile-image"
+                        src="assets/amenities/amenities mobile/senior citizen corner.webp"
+                        alt="Senior Citizen Corner">
+                    <p class="amenities-name"><span class="material-symbols-outlined">
+                            elderly
+                        </span>Senior Citizen Corner</p>
+                </div>
+                <div class="carousel-item">
+                    <img loading="lazy" class="amenities-desktop-image"
+                        src="assets/amenities/amenities desktop/jogging track.webp"
+                        alt="Jogging & Cycling Track">
+                    <img loading="lazy" class="amenities-mobile-image"
+                        src="assets/amenities/amenities mobile/jogging track.webp"
+                        alt="Jogging & Cycling Track">
+                    <p class="amenities-name"><span class="material-symbols-outlined">
+                            directions_run
+                        </span>Jogging & Cycling Track</p>
+                </div>
+                <div class="carousel-item">
+                    <img loading="lazy" class="amenities-desktop-image"
+                        src="assets/amenities/amenities desktop/club-ujjivan.webp"
+                        alt="Club Ujjivan">
+                    <img loading="lazy" class="amenities-mobile-image"
+                        src="assets/amenities/amenities mobile/club-ujjivan-portrait.webp"
+                        alt="Club Ujjivan">
+                    <p class="amenities-name"><span class="material-symbols-outlined">
+                            self_improvement
+                        </span>Club Ujjivan</p>
+                </div>
+                <div class="carousel-item">
+                    <img loading="lazy" class="amenities-desktop-image"
+                        src="assets/amenities/amenities desktop/library desktop.webp"
+                        alt="Library">
+                    <img loading="lazy" class="amenities-mobile-image"
+                        src="assets/amenities/amenities mobile/library mobile.webp"
+                        alt="Library">
+                    <p class="amenities-name"><span class="material-symbols-outlined">
+                            auto_stories
+                        </span>Library</p>
+                </div>
+                <div class="carousel-item">
+                    <img loading="lazy" class="amenities-desktop-image"
+                        src="assets/amenities/amenities desktop/swimming pool desktop.webp"
+                        alt="Swimming Pool">
+                    <img loading="lazy" class="amenities-mobile-image"
+                        src="assets/amenities/amenities mobile/swimming pool mobile.webp"
+                        alt="Swimming Pool">
+                    <p class="amenities-name"><span class="material-symbols-outlined">
+                            pool
+                        </span>Swimming Pool</p>
+                </div>
+                <div class="carousel-item">
+                    <img loading="lazy" class="amenities-desktop-image"
+                        src="assets/amenities/amenities desktop/gym desktop.webp"
+                        alt="Conditioned Gymnasium">
+                    <img loading="lazy" class="amenities-mobile-image"
+                        src="assets/amenities/amenities mobile/gym mobile.webp"
+                        alt="Conditioned Gymnasium">
+                    <p class="amenities-name"><span class="material-symbols-outlined">
+                            exercise
+                        </span>Air Conditioned Gymnasium</p>
+                </div>
+                <div class="carousel-item">
+                    <img loading="lazy" class="amenities-desktop-image"
+                        src="assets/amenities/amenities desktop/indoor games desktop.webp"
+                        alt="Indoor Games Room">
+                    <img loading="lazy" class="amenities-mobile-image"
+                        src="assets/amenities/amenities mobile/indoor games mobile.webp"
+                        alt="Indoor Games Room">
+                    <p class="amenities-name"><span class="material-symbols-outlined">
+                            sports_tennis
+                        </span>Indoor Games Room</p>
+                </div>
+                <div class="carousel-item">
+                    <img loading="lazy" class="amenities-desktop-image"
+                        src="assets/amenities/amenities desktop/rooftop garden desktop.webp"
+                        alt="Rooftop Garden">
+                    <img loading="lazy" class="amenities-mobile-image"
+                        src="assets/amenities/amenities mobile/rooftop garden mobile.webp"
+                        alt="Rooftop Garden">
+                    <p class="amenities-name"><span class="material-symbols-outlined">
+                            deceased
+                        </span>Rooftop Garden</p>
+                </div>
+                <div class="carousel-item">
+                    <img loading="lazy" class="amenities-desktop-image"
+                        src="assets/amenities/amenities desktop/miniplex.webp "
+                        alt="Mini Theatre">
+                    <img loading="lazy" class="amenities-mobile-image"
+                        src="assets/amenities/amenities mobile/mini-theatre.webp"
+                        alt="Mini Theatre">
+                    <p class="amenities-name"><span class="material-symbols-outlined">
+                            movie
+                        </span>Mini Theatre</p>
+                </div>
+                <div class="carousel-item">
+                    <img loading="lazy" class="amenities-desktop-image"
+                        src="assets/amenities/amenities desktop/banquet desktop.webp"
+                        alt="Banquet">
+                    <img loading="lazy" class="amenities-mobile-image"
+                        src="assets/amenities/amenities mobile/banquet mobile.webp"
+                        alt="Banquet">
+                    <p class="amenities-name"><span class="material-symbols-outlined">
+                            chair
+                        </span>Banquet</p>
+                </div>
+                <div class="carousel-item">
+                    <img loading="lazy" class="amenities-desktop-image"
+                        src="assets/amenities/amenities desktop/singing-room.webp"
+                        alt="Malhar">
+                    <img loading="lazy" class="amenities-mobile-image"
+                        src="assets/amenities/amenities mobile/singing-room-portrait.webp"
+                        alt="Malhar">
+                    <p class="amenities-name"><span class="material-symbols-outlined">
+                        music_note
+                        </span>Malhar</p>
+                </div>
+                <div class="carousel-item">
+                    <img loading="lazy" class="amenities-desktop-image"
+                        src="assets/amenities/amenities desktop/dancing-room.webp" alt="Muktadhara">
+                    <img loading="lazy" class="amenities-mobile-image"
+                        src="assets/amenities/amenities mobile/dancing-room-portrait.webp"
+                        alt="Muktadhara">
+                    <p class="amenities-name"><span class="material-symbols-outlined">
+                        sports_gymnastics
+                        </span>Muktadhara</p>
+                </div>
+                <div class="carousel-item">
+                    <img loading="lazy" class="amenities-desktop-image"
+                        src="assets/amenities/amenities desktop/art-room.webp" alt="Chitrakalpa">
+                    <img loading="lazy" class="amenities-mobile-image"
+                        src="assets/amenities/amenities mobile/art-room-portrait.webp" alt="Chitrakalpa">
+                    <p class="amenities-name"><span class="material-symbols-outlined">
+                        palette
+                        </span>Chitrakalpa</p>
+                </div>
+
+                <div class="carousel-item">
+                    <img loading="lazy" class="amenities-desktop-image"
+                        src="assets/amenities/amenities desktop/Play ground.webp" alt="Krirangan">
+                    <img loading="lazy" class="amenities-mobile-image"
+                        src="assets/amenities/amenities mobile/Play ground portrait.webp" alt="Krirangan">
+                    <p class="amenities-name"><span class="material-symbols-outlined">
+                        sports_soccer
+                        </span>Krirangan</p>
+                </div>
+                <!-- Add more items as needed -->
+            </div>
+            <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
+            <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
+        </div>
+    </div>
+        <div class="main_div amenities-download-brochure" id="amenities-download-brochure" onclick="enquiryForm('brochure')">
+            <button>Download Brochure</button>
+        </div>
+</section>
+
+
+<h1 class="floor-plans-heading-desktop heading">Architectural Plans</h1>
+<section class="floor-plans-section" id="floor-plans">
+    <h1 class="floor-plans-heading-mobile heading">Architectural Plans</h1>
+    <div class="floor-plans-tabs">
+        <button class="floor-plans-tab" onclick="floorPlanShowTab(1)">Floor Plan</button>
+        <button class="floor-plans-tab" onclick="floorPlanShowTab(2)">Master Plan</button>
+    </div>
+    <div class="floor-plans-images">
+        <div class="floor-plans-tab-content">
+            <div class="floor-plans">
+                <div class="floor-plans-container">
+                    <div class="floor-plans-item">
+                        <p class="unit-plan-size">Tower A1+A2 Floor:1,3,5,7</p>
+                        <!-- <button class="floor-plans-view-button" onclick="enquiryForm('floor plan')">View
+                            Plan</button> -->
+                        <img loading="lazy"
+                            src="assets/Floor and Master plans/Floor plan-26.webp"
+                            alt="Floor Plan 1">
+                    </div>
+                    <div class="floor-plans-item">
+                        <p class="unit-plan-size">Tower A1+A2 Floor:2,4,6</p>
+                        <!-- <button class="floor-plans-view-button" onclick="enquiryForm('floor plan')">View
+                            Plan</button> -->
+                        <img loading="lazy"
+                            src="assets/Floor and Master plans/Floor plan-27.webp"
+                            alt="Floor Plan 2">
+                    </div>
+                    <div class="floor-plans-item">
+                        <p class="unit-plan-size">Tower B First Floor</p>
+                        <!-- <button class="floor-plans-view-button" onclick="enquiryForm('floor plan')">View
+                            Plan</button> -->
+                        <img loading="lazy"
+                            src="assets/Floor and Master plans/Floor plan-28.webp"
+                            alt="Floor Plan 3">
+                    </div>
+                    <div class="floor-plans-item">
+                        <p class="unit-plan-size">Tower B Floor:3,5,7</p>
+                        <!-- <button class="floor-plans-view-button" onclick="enquiryForm('floor plan')">View
+                            Plan</button> -->
+                        <img loading="lazy"
+                            src="assets/Floor and Master plans/Floor plan-30.webp"
+                            alt="Floor Plan 3">
+                    </div>
+                    <div class="floor-plans-item">
+                        <p class="unit-plan-size">Tower B Floor:2,4,6</p>
+                        <!-- <button class="floor-plans-view-button" onclick="enquiryForm('floor plan')">View
+                            Plan</button> -->
+                        <img loading="lazy"
+                            src="assets/Floor and Master plans/Floor plan-29.webp"
+                            alt="Floor Plan 3">
+                    </div>
+                    <!-- Add more items as needed -->
+                </div>
+                <button class="floor-plans-control prev" onclick="floorPlansprevSlide()">
+                    &#10094;
+                </button>
+                <button class="floor-plans-control next" onclick="floorPlansnextSlide()">
+                    &#10095;
+                </button>
+            </div>
+            <div class="thumbnail-strip">
+                <img loading="lazy" src="assets/Floor and Master plans/Floor plan-26.webp"
+                    alt="Floor Plan 1" onclick="floorPlansShowSlide(0)">
+                <img loading="lazy" src="assets/Floor and Master plans/Floor plan-27.webp"
+                    alt="Floor Plan 2" onclick="floorPlansShowSlide(1)">
+                    <img loading="lazy" src="assets/Floor and Master plans/Floor plan-28.webp"
+                    alt="Floor Plan 1" onclick="floorPlansShowSlide(2)">
+                <img loading="lazy" src="assets/Floor and Master plans/Floor plan-30.webp"
+                    alt="Floor Plan 3" onclick="floorPlansShowSlide(3)">
+                <img loading="lazy" src="assets/Floor and Master plans/Floor plan-29.webp"
+                    alt="Floor Plan 3" onclick="floorPlansShowSlide(4)">
+                <!-- Add more thumbnails as needed -->
+            </div>
+        </div>
+        <div class="floor-plans-tab-content hidden">
+            <div class="master-floor-plans">
+                <div class="master-floor-plans-container">
+                    <div class="master-floor-plans-item">
+                        <!-- <p class="unit-plan-size">London Cluster</p> -->
+                        <!-- <button class="floor-plans-view-button" onclick="enquiryForm('floor plan')">View
+                            Plan</button> -->
+                        <img loading="lazy"
+                            src="assets/Floor and Master plans/Master Plan-31.webp"
+                            alt="Master Plan 1">
+                    </div>
+                    <!-- <div class="master-floor-plans-item">
+                        <p class="unit-plan-size">Paris Cluster</p>
+                        <button class="floor-plans-view-button" onclick="enquiryForm('floor plan')">View
+                            Plan</button>
+                        <img loading="lazy" src="assets/Floor and Master plans/paris master plan.jpg"
+                            alt="Master Plan 2">
+                    </div> -->
+                    <!-- Add more items as needed -->
+                </div>
+                <!-- <button class="floor-plans-control prev" id="master-plan-control"
+                    onclick="masterFloorPlansprevSlide()">
+                    &#10094;
+                </button>
+                <button class="floor-plans-control next" id="master-plan-control"
+                    onclick="masterFloorPlansNextSlide()">
+                    &#10095;
+                </button> -->
+            </div>
+            <!-- <div class="thumbnail-strip" id="master-plan-strip">
+                <img loading="lazy" src="assets/Floor and Master plans/master Plan London-01.jpg" alt="Master Plan 1"
+                    onclick="masterfloorPlansShowSlide(0)">
+                <img loading="lazy" src="assets/Floor and Master plans/paris master plan.jpg" alt="Master Plan 2"
+                    onclick="masterfloorPlansShowSlide(1)">
+                Add more thumbnails as needed -->
+            <!-- </div> -->
+        </div>
+    </div>
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal">
+        <span class="image-modal-close" onclick="closeModal()">&times;</span>
+        <img class="image-modal-content" id="modalImage">
+    </div>
+</section>
+
+
 
     <div class="video_container">
         <h2 class="heading">VIDEO</h2><br>
@@ -292,7 +641,7 @@
     <footer>
         <div>
             <section class="developer-office">
-                <img loading="lazy" src="dream_gurukul_madhyamgram/assets/jaingroup.webp" alt="Jain Group Logo">
+                <img loading="lazy" src="assets/jaingroup.webp" alt="Jain Group Logo">
                 <h3>Corporate Office</h3>
                 <p>Jain Tower, 44/2A, Hazra Road</p>
                 <p>Near Dover Road Crossing, Kolkata - 700019</p>
