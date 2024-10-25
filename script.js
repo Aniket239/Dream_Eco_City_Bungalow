@@ -741,11 +741,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /*============================== gallery scroll ============================================== */
 
-const gallery_carousel = document.querySelector('.gallery-carousel')
-const slider = gallery_carousel.querySelectorAll('.gallery-carousel_slides')
-console.log('====================================');
-console.log(slider);
-console.log('====================================');
+const gallery_carousel = document.querySelector('.gallery_carousel')
+const slider = gallery_carousel.querySelector('.gallery_carousel_track-container .gallery_carousel_track')
 let slides = [...slider.children]
 
 // Initial slides position, so user can go from first to last slide (click to the left first)
@@ -754,12 +751,12 @@ slider.prepend(slides[slides.length - 1])
 // Creating dot for each slide
 const createDots = (gallery_carousel, initSlides) => {
     const dotsContainer = document.createElement('div')
-    dotsContainer.classList.add('gallery-carousel_nav')
+    dotsContainer.classList.add('gallery_carousel_nav')
 
     initSlides.forEach((slide, index) => {
         const dot = document.createElement('button')
         dot.type = 'button'
-        dot.classList.add('gallery-carousel_dot')
+        dot.classList.add('gallery_carousel_dot')
         dot.setAttribute('aria-label', `Slide number ${index + 1}`)
         slide.dataset.position = index
         slide.classList.contains('is-selected') && dot.classList.add('is-selected')
