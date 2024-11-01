@@ -27,7 +27,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #7E4B2C;
+    background: #134217;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -94,8 +94,8 @@ nav ul li a:hover {
 
 nav ul li a img {
     margin-top: 5%;
-    width: 125px;
-    height: 120px;
+    width: 155px;
+    height: 98px;
     mix-blend-mode: color;
 }
 
@@ -312,13 +312,13 @@ nav ul li a img {
     transform: translateY(-50%);
     width: 15px;
     height: 15px;
-    border: 2px solid #7E4B2C;
+    border: 2px solid #134217;
     border-radius: 3px;
     background-color: white;
 }
 
 .terms-and-condition:checked+label:before {
-    background-color: #7E4B2C;
+    background-color: #134217;
 }
 
 .terms-and-condition:checked+label:after {
@@ -334,7 +334,7 @@ nav ul li a img {
 }
 
 input[type="submit"] {
-    background-color: #371B10;
+    background-color: #134217;
     color: white;
     border: none;
     cursor: pointer;
@@ -346,7 +346,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #7E4B2C;
+    background-color: #0d240f;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -398,7 +398,7 @@ input[type="number"] {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    background-color: #371B10;
+    background-color: #134217;
     padding: 8px 0 6px 0;
     border-radius: 50px 0 0 50px;
     height: 54px;
@@ -415,7 +415,7 @@ input[type="number"] {
         'opsz' 48;
     font-size: 40px;
     color: white;
-    background-color: #371B10;
+    background-color: #134217;
     width: auto;
     z-index: 10;
     padding: 0 15px 0 0;
@@ -491,7 +491,7 @@ input[type="number"] {
     }
 
     50% {
-        box-shadow: 0 0 0 5px #7E4B2C;
+        box-shadow: 0 0 0 5px #134217;
     }
 
     100% {
@@ -501,7 +501,7 @@ input[type="number"] {
 
 .side-nav-enquiry button {
     padding: 8px 18px;
-    background-color: #371B10;
+    background-color: #134217;
     border: none;
     color: white;
     font-size: 30px;
@@ -521,7 +521,7 @@ input[type="number"] {
 
 .heading {
     font-family: "Cinzel", serif;
-    font-size: 34px;
+    font-size: 29px;
     font-weight: bolder;
     color: #31403F;
     text-align: center;
@@ -1026,7 +1026,7 @@ input[type="number"] {
 
 .floor-plans-tab:focus,
 .floor-plans-tab.focus {
-    background-color: #7E4B2C;
+    background-color: #134217;
     color: white;
 }
 
@@ -1097,7 +1097,7 @@ input[type="number"] {
     top: 0%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #7E4B2C;
+    background-color: #134217;
     color: white;
     padding: 10px 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -1144,7 +1144,7 @@ input[type="number"] {
     position: absolute;
     top: 52%;
     transform: translateY(-50%);
-    background-color: #7E4B2C;
+    background-color: #134217;
     color: white;
     border: 3px solid white;
     height: 65px;
@@ -1348,7 +1348,7 @@ input[type="number"] {
     top: 50%;
     background-color: transparent;
     transform: translateY(-50%);
-    background-color: #fff2e0;
+    background-color: #134217;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -1358,7 +1358,7 @@ input[type="number"] {
 .jsNextIcon,
 .jsPrevIcon {
     font-size: 55px !important;
-    color: #98614A;
+    color: white;
 }
 
 .jsNextIcon {
@@ -1453,6 +1453,122 @@ input[type="number"] {
     border-radius: 10px;
 }
 
+
+.location-advantage-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 30px;
+}
+
+.location-advantage {
+    width: 100%;
+    margin-top: 1%;
+}
+
+.material-symbols-outlined {
+    padding: 10px;
+}
+
+.accordion {
+    background-color: #134217;
+    color: white;
+    cursor: pointer;
+    padding: 7px;
+    width: 97%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 22px;
+    transition: 0.4s;
+    font-family: "Playfair Display", serif;
+    margin: 2px;
+    display: flex;
+    align-items: center;
+}
+
+
+.accordion:hover {
+    background-color: #0d270f;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    margin-left: auto;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: #fff3f3;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    margin-left: 1%;
+    margin-right: 4%;
+}
+
+.map-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.map-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.map-item ul {
+    list-style: none;
+    width: 100%;
+}
+
+.map-item ul li h2 {
+    font-size: 26px;
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+}
+
+.map-item ul li {
+    font-family: "Jost", sans-serif;
+    font-size: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.location-name {
+    width: 40%;
+    text-align: left;
+}
+
+.location-dots {
+    width: 25%;
+    text-align: right;
+}
+
+.location-dots-mobile {
+    display: none;
+}
+
+.location-time {
+    width: 25%;
+    text-align: left;
+    padding-left: 10px;
+}
+
 #map.map-section {
     padding: 30px 0px;
     /* Light gray background for contrast */
@@ -1477,9 +1593,73 @@ input[type="number"] {
     border: none;
 }
 
+.home-loan {
+    padding: 20px;
+    text-align: center;
+    background-color: #ffffff;
+  }
+  
+  .home-loan h1 {
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    margin: 20px;
+    font-size: 38px;
+  }
+  
+  .bank-logos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 90%;
+    margin: 40px auto;
+  }
+  
+  .bank-logos div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    gap: 170px;
+  }
+  
+  .bank-logos img {
+    height: 10vh;
+    max-width: 12%;
+    flex: 1 1 calc(25% - 40px);
+    aspect-ratio: 1/1;
+    mix-blend-mode: multiply;
+    object-fit: contain;
+  }
+  @keyframes fadeInMoveUp {
+    from {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .bank-logos img.hidden {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  
+  .bank-logos img.visible {
+    animation: fadeInMoveUp 2.5s forwards;
+  }
+  
+  .bank-logos img {
+    opacity: 0; /* Ensure they are hidden initially */
+    transition: opacity 2.5s, transform 2.5s; /* Add transition for smoother appearance */
+  }
+  
 footer {
     bottom: 0;
-    background-color: #371B10;
+    background-color: #001d0e;
     color: #efe1bb;
     text-align: center;
     padding: 30px 0 30px 0;
@@ -1961,7 +2141,7 @@ footer a {
         height: 111px;
         left: auto;
         right: 8%;
-        bottom: -15%;
+        bottom: -19%;
     }
 
 
@@ -2013,7 +2193,7 @@ footer a {
         flex-direction: column;
     }
 
-    .carousel{
+    .carousel {
         width: 100%;
     }
 
@@ -2172,7 +2352,7 @@ footer a {
         right: 15px;
     }
 
-    
+
     .gallery-carousel {
         width: 87vw;
         height: 58vmin;
@@ -2184,10 +2364,114 @@ footer a {
     }
 
 
+    .location-advantage-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 0 20px;
+    }
+
+    .location-advantage {
+        width: 99%;
+        margin-top: 2%;
+    }
+
+    .accordion {
+        background-color: #134217;
+        color: white;
+        cursor: pointer;
+        padding: 7px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 22px;
+        transition: 0.4s;
+        font-family: "Playfair Display", serif;
+        display: flex;
+        align-items: center;
+    }
+
+    
+    .accordion:hover {
+        background-color: #0d270f;
+    }
+
+    .accordion:after {
+        content: '\002B';
+        color: white;
+        font-weight: bold;
+        margin-left: auto;
+    }
+
+    .active:after {
+        content: "\2212";
+    }
+
+    .panel {
+        padding: 0 18px;
+        background-color: #fff3f3;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        margin-left: 2%;
+        margin-right: 1%;
+    }
+
+    .map-item ul li h2 {
+        font-size: 21px;
+    }
+
+    .map-item ul li h2 {
+        font-size: 19px;
+    }
+
+    .location-name {
+        width: 70%;
+        text-align: left;
+        font-size: 18px;
+    }
+
+    .location-dots {
+        display: none;
+    }
+
+    .location-dots-mobile {
+        display: block;
+    }
+
+
+    #map.map-section {
+        padding: 30px 0px;
+        /* Light gray background for contrast */
+        text-align: center;
+        /* Center align heading */
+    }
 
     #map.map-section .map {
+        width: 95%;
         height: 50vh;
+        margin: 10px auto;
+        /* Center the map */
+        border: 1px solid black;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* Subtle shadow */
     }
+
+    #map.map-section iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+
+
+
+    /* #map.map-section .map {
+        height: 50vh;
+    } */
 
     .video iframe {
         width: 100vw;
@@ -2198,6 +2482,28 @@ footer a {
     .video_container {
         margin-top: 20px;
     }
+
+    .home-loan h1 {
+        margin: 40px 0 0 0;
+        font-size: 33px;
+      }
+    
+      .bank-logos {
+        margin: 40px auto 0 auto;
+      }
+    
+      .bank-logos img {
+        flex: 1 1 calc(50% - 40px);
+        max-width: 45%;
+        width: 80px;
+        height: 80px;
+      }
+    
+      .bank-logos div {
+        gap: 40px;
+        margin-bottom: 34px;
+      }
+    
 
 
     footer {

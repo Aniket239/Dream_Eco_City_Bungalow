@@ -852,6 +852,60 @@ document.getElementById('video-thumbnail').addEventListener('click', function ()
     document.getElementById('video-wrapper').style.display = 'block';
 });
 
+//====================================== location advantage accordion =====================================
+document.addEventListener("DOMContentLoaded", function () {
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    }
+});
+
+// ======================================= home loan ================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    const homeLoanSection = document.querySelector('.home-loan');
+    const bankLogos = document.querySelectorAll('.bank-logos img');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                bankLogos.forEach((img, index) => {
+                    setTimeout(() => {
+                        img.classList.add('visible');
+                        img.classList.remove('hidden');
+                    }, index * 100); // Stagger the animations
+                });
+                observer.unobserve(homeLoanSection); // Stop observing after the first trigger
+            }
+        });
+    }, observerOptions);
+
+    bankLogos.forEach(img => {
+        img.classList.add('hidden');
+    });
+
+    observer.observe(homeLoanSection);
+});
+
+
+
+
 // ============================================= footer =========================================
 
 document.addEventListener('DOMContentLoaded', () => {
